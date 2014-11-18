@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html><head>
+	
+	
+    <title>Skiply - Bypass Adf.ly, Adfoc.us, Sh.st, Ag.ay and many more</title>
+    <meta name="author" content="Bypassshorturl.com">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Skiply tools allow to skip, decrypt or bypass Adf.ly link, Adfoc.us link, goog.gl advertisement Short Url without waiting or loading advertisement page.">
+	<meta name="keywords" content="bypass advertisement,adfly bypasser, deadfly decoder, deadfly, adfly decrypter, adfly, LinkBucks, linkbucks bypasser, adfocus decrypter,adfocus bypasser, bc.vc, bc.vc bypasse, skip adevertisement, skip adf.ly">
+	<meta name="googlebot" content="index,follow">    
+	<meta name="robots" content="index,follow">    
+	<meta name="msnbot" content="index,follow">
+	<meta name="url" content="">
+	<meta name="google-site-verification" content="">
+	<meta name="alexaVerifyID" content="">
+	<meta name="msvalidate.01" content="">
+	
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Adf.ly bypasser: Bypass Adfly , LinkBucks, Adfoc.us Bc.Vc urls without losing time">
+	<meta property="og:url" content="">
+	<meta property="og:description" content="ByPassShortUrl.com tools allow to skip, decrypt or bypass Adf.ly link, Adfoc.us link, goog.gl advertisement Short Url without waiting or loading advertisement page.">
+	<meta property="og:image" content="">
+	<meta property="og:site_name" content="Bypass short url of adf.ly, adfoc.us, goo.gl and many more">
+    <link rel="icon" type="image/png" href="">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div id="container_bpsu">
+		<div id="bpsu_container">
+			<div class="logoclass">
+	            
+	                <h1>Skiply</h1>
+	            
+			</div>
+			<div id="bpsu_description">
+				Skiply allows to bypass Adf.ly link, Adfoc.us link, sh.st.com, bc.vc, goo.gl advertisement Short Url without waiting or loading advertisement page.
+			</div>
+			<div class="center">
+				<div class="center-wait"></div>
+				<div class="form">
+					<form name="form_download" id="form_download" method="post">
+						<input name="scd_link" id="scd_link" placeholder="Paste Your Adf.ly, Adfoc.us, linkbucks.com, bit.ly, goo.gl Short Link Here.." type="text">							<input name="btn_download" id="btn_download" value="Expand" tabindex="2" type="submit">
+					</form>
+				</div>
+			</div>
+			<div class="center2">
+					<div class="downloadready">
+						<a href="/" id="scd_url_back" rel="nofollow">Back</a>
+						<div id="scd_url"></div>
+						
+					</div>
+			</div>
+			<div id="scd_loading">
+				<div style="clear:both"></div>
+			</div>
+			<div id="footer">
+						 © 2013 - All Rights Reserved. | 
+						
+						<a href="mailto:vikas@kapadiya.net">Vikas Kapadiya</a>
+			</div>
+		</div>
+	</div>
+	<script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.js"></script>
+	<script type="text/javascript"> 
+		$.support.cors = true;
+		$(document).ready(function() {
+			$("#form_download").submit(function() {
+				$('#scd_url').html('');
+				$('#scd_url').attr('href','');
+				var scsrc = $("#scd_link").val();
+				$('.form').attr('style','display:none');
+				$('.center-wait').attr('style','display:block');
+				$('.center-wait').html("<div class='loading'>Preparing the Bypass link. Please wait.....</div>");
+			    $.ajax({
+		        url: "http://aqueous-cove-6295.herokuapp.com/ajax.php",
+		        type: "POST",
+		        dataType: "text",
+		        data: {'url': scsrc },
+		        success: function(data) {
+		            
+		            if (data.indexOf('error: bad url') !== -1 || data.indexOf('error: page not found') !== -1) {
+		                scd_warning();
+		                $('.form').attr('style','display:block');
+		                $('.center-wait').attr('style','display:none');
+		            } else {
+		                $('#scd_url').html(data);
+		                $('.center2').attr('style','display:block');
+		                $('#submit_b').hide();
+		                $('#scd_url').show('slow');
+		                $("#scd_link").removeAttr('value',"Paste a link to the track page...");
+		                $('.form').attr('style','display:none');
+		                $('.center').attr('style','display:none');
+		                $('.center-wait').attr('style','display:none');
+									}
+						        }
+						    });
+				        return false;
+				    }); 
+				
+				});
+
+				function scd_warning() {
+				    $('#scd_loading').html("Please check your Short link!");
+				    setTimeout( function() {
+				        $('#scd_loading').empty(); 
+				     }, 3000);
+				}
+</script>
+
+</body></html>
