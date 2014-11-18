@@ -1,5 +1,5 @@
-@import url("http://fonts.googleapis.com/css?family=Noto+Sans%3A400%2C700&#038;ver=3.6");
-@import url("http://fonts.googleapis.com/css?family=Righteous");
+@import url("//fonts.googleapis.com/css?family=Noto+Sans%3A400%2C700&#038;ver=3.6");
+@import url("//fonts.googleapis.com/css?family=Righteous");
 html, body {
      text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important
 }
